@@ -1,11 +1,6 @@
 import imageio
 import os
 
-from numpy import source
-
-
-# Definitions
-
 
 def Gifmaker(inputPath, targetFormat):
     outputPath = (
@@ -24,9 +19,11 @@ def Gifmaker(inputPath, targetFormat):
     # additional fps based on original
     slowmo = originalfps * 2
     doubletime = originalfps / 2
-    # writes output. change speed with second argument
+
+    # get_writer . change speed with second argument
     writer = imageio.get_writer(outputPath, fps=originalfps)
-    # loops through and writes each frame in clip
+
+    # loops through, writes, and prints each frame in original clip and appends to writer
     for frames in reader:
         writer.append_data(frames)
         print(f"Frame: {frames}")
