@@ -1,5 +1,7 @@
 import requests
+import selenium
 from bs4 import BeautifulSoup
+
 
 # Webscraper Template
 # This basic webscraper uses request and beautiful soup to collect and processes data from a given URL
@@ -12,6 +14,7 @@ URL = "https://www.amazon.com/APC-Back-UPS-Battery-Protector-BR700G/dp/B002RCNX8
 headers = {"User-Agent": "my user agent"}
 # returns results of request.get to page using the defined input
 page = requests.get(URL, headers=headers)
+
 # assigns entire contents of soup
 soup1 = BeautifulSoup(page.content, "lxml")
 # searches saved soup instead of live site to prevent flagging

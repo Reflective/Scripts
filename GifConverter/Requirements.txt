@@ -1,0 +1,2 @@
+imageio==2.21.0
+imageio-ffmpeg==0.4.7
